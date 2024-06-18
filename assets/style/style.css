@@ -1,0 +1,182 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Sriracha";
+    --zecron: #f3f6ff;
+    --goldenrod: #f9d370;
+    --light-purple: #979ec7;
+    --black-rock: #0a032a;
+}
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: var(--zecron);
+}
+
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid var(--light-purple);
+    border-top-color: var(--zecron);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+h1 {
+    font-family: "Playball";
+    color: var(--goldenrod);
+    letter-spacing: 2px;
+    word-spacing: 6px;
+    text-shadow: 2px 2px 5px var(--black-rock) , -2px -2px 5px var(--black-rock);
+}
+.navbar h3 ,
+.navbar .nav-link,
+.navbar .nav-icon,
+.navbar .btn,
+.navbar .mood,
+.navbar .icon, 
+.offcanvas-title, p,
+.projects .card h5 ,footer a {
+    color: var(--black-rock);
+}
+.navbar .btn  {
+    border: 2px solid var(--black-rock);
+}
+.navbar .mood {
+    cursor: pointer;
+    font-size: 35px;
+    margin-top: 10px;
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../imgs/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.h1-title , .hero span {
+    color: var(--goldenrod);
+    font-size: 120px;
+    letter-spacing: 2px;
+    word-spacing: 6px;
+    text-shadow: 4px 4px 4px var(--black-rock) , -4px -4px 4px var(--black-rock);
+}
+.hero span {
+    font-size: 60px;
+}
+.hero::after , 
+.about-us::after , 
+.projects::after , 
+.architects::after , 
+.work-together::after{
+    display: flex;
+    position: absolute;
+    height: 20px;
+    width: 50vw;
+    content: '';
+    bottom: 0;
+    border-radius:40px 40px 0 0;
+}
+.hero::after , .projects::after,
+.about-us , .architects , .work-together form ,
+.card {
+    background-color: var(--zecron);
+}
+.about-us::after , .architects::after,
+.projects , .work-together {
+    background-color: var(--light-purple);
+}
+.projects .card-img-top {
+    height: 250px;
+}
+.architects .swiper-slide img , .work-together img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.work-together form {
+    height: 400px;
+}
+.work-together form .form-icon{
+    color: var(--light-purple);
+}
+.work-together form .btn , footer , .work-together::after{
+    background-color: var(--goldenrod);
+}
+footer .copyright {
+    font-family: "Playball";
+}
+.to-top {
+    position: fixed;
+    display: flex;
+    font-size: 20px;
+    padding: 10px 12px;
+    color: var(--zecron);
+    background-color: var(--black-rock);
+    border-radius: 50%;
+    bottom: 15px;
+    right: -40px;
+    z-index: 1;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.to-top.show{
+    right: 15px;
+}
+/* onscroll */
+.navbar.scroll {
+    background-color: #f9d270e8;
+    padding: 10px 0 15px 0 !important;
+}
+@media screen and (min-width:991px) {
+    .navbar .navbar-nav {
+        background-color: var(--zecron);
+        border-radius: 0 0 40px 40px ;
+    }
+    .navbar-nav.scroll {
+        background-color: transparent;
+    }
+    .navbar .nav-icon {
+        width: 15%;
+    }
+}
+@media screen and (max-width:991px) {
+    .sidebar {
+        background-color: var(--zecron);
+        backdrop-filter: blur(50px) ;
+    }
+    .sidebar.scroll {
+        background-color: var(--goldenrod);
+    }
+    .hero::after {
+        height: 15px;
+    }
+}
+@media screen and (max-width:576px) {
+    .h1-title {
+        font-size: 90px;
+    }
+    .hero span {
+        font-size: 60px;
+    }
+}
